@@ -1,8 +1,10 @@
-<p>
-  Formulaire pour {{title}}
-  <mat-form-field>
-    <input matInput placeholder="Input" [(ngModel)]='input.name'>
-  </mat-form-field>
+<form #exampleForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <mat-form-field>
+      <input matInput placeholder="Nom" required [(ngModel)]='input.name' name='name'>
+    </mat-form-field>
+  </div>
+  <button type="submit" mat-raised-button color="primary" [disabled]="!exampleForm.form.valid">Obtenir la signification</button>
 
-  Vous avez tapé: {{input.name}}. La signification est: {{input.info}}
-</p>
+</form>
+<p> Vous avez tapé: {{input.name}}. La signification est: {{input.info}} </p>
