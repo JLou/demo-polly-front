@@ -15,4 +15,10 @@ export class InputService {
       responseType: "text"
     });
   }
+
+  getInfoCircuitBreaker(name: string): Observable<string> {
+    return this.http.get(this.apiBaseUrl + "/circuit-breaker/" + name, {
+      responseType: "text"
+    });
+  }
 }
