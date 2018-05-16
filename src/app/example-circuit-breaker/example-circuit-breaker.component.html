@@ -5,9 +5,9 @@
       <input matInput placeholder="Nom" required [(ngModel)]='input.name' name='name'>
     </mat-form-field>
   </div>
-  <button type="submit" mat-raised-button color="primary" [disabled]="!exampleForm.form.valid">Obtenir la signification</button>
-
+  <button type="submit" mat-raised-button color="accent" [disabled]="!exampleForm.form.valid">Obtenir la signification</button>
+  <mat-progress-spinner diameter="25" *ngIf="loading" class="spinner" color="accent" mode="indeterminate">
+  </mat-progress-spinner>
 </form>
-<mat-progress-spinner *ngIf="loading" class="example-margin" mode="indeterminate">
-</mat-progress-spinner>
+
 <p> Vous avez tapé: {{input.name}}. La signification est: {{input.info}} </p>
